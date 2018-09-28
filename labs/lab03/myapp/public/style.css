@@ -1,0 +1,16 @@
+body {
+    background-color: palegreen;
+}
+
+#myButton {
+    margin-left:auto;
+    margin-right:auto;
+    height: 300px;
+    color:green;
+}
+
+#title {
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,35 @@
+/*** CSS Tutorial: Color page ***/
+
+/* page font */
+body {
+  font: 16px "Comic Sans MS", cursive;
+  background: url("Blue-rule.png");
+}
+
+/* paragraphs */
+p {
+  color: #00f; /* blue */
+}
+
+p:before{
+  content: url("Yellow-pin.png");
+}
+
+.carrot {
+  color: #fa0; /* orange */
+}
+
+#first {
+  font-style: italic;
+}
+
+/* initial letters */
+strong {
+  color: #f00; /* red */
+  background-color: #ddf; /* pale blue */
+  font: 200% serif;
+}
+
+.spinach {
+  color: #080; /* dark green */
+}

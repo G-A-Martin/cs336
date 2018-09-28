@@ -1,0 +1,55 @@
+/* numbered paragraphs */
+h3.numbered {
+    counter-reset: mynum;
+}
+
+h3 {
+
+    border-top: 1px solid gray;
+    text-align: center;
+}
+
+ul,
+#numbered {
+    float: left;
+}
+
+h3 {
+    clear: left;
+}
+
+
+p.numbered:before {
+    content: counter(mynum) ": ";
+    counter-increment: mynum;
+    font-weight: bold;
+}
+
+/* numbered headings */
+body {
+    counter-reset: headnum;
+    counter-reset: newnum;
+}
+
+h3:before {
+    content: "("counter(headnum, upper-latin) ") ";
+    counter-increment: headnum;
+}
+
+
+ul,
+#numbered {
+    border: 1em solid lightblue;
+    padding-right: 1em;
+}
+
+li {
+    list-style: lower-roman;
+    margin-bottom: 8px;
+}
+
+#fixed-pin {
+    position: fixed;
+    top: 3px;
+    right: 3px;
+}
