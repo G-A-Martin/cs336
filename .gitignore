@@ -1,5 +1,6 @@
 # Node/NPM
 node_modules/
+Homework1/node_modules/
 npm-debug.log
 .DS_Store
 /*.env
@@ -59,7 +60,7 @@ atlassian-ide-plugin.xml
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
-crashlytics-build.properties
+crashlytics-build.properties 
 fabric.properties
 
 # Editor-based Rest Client
