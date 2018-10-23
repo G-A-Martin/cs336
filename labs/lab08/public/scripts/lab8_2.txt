@@ -1,0 +1,68 @@
+// Gavin Martin 
+// CS336
+// October 23
+// Keith Vander-Linden
+
+Explain: 
+
+    i. the component structure of the application. What makes the UI composable and why does this matter?
+
+        - The component structure involves the commentBox, commentList, comment, and CommentForm. props and composition give you the flexibility
+        to customoze a component's look and behavior in an explicit and safe way without inheritance. You can pass in elements as props just like any other
+        peices of data through props.children. This is helpful if the children are ambigious, so you can simply use props.children in these senarios. 
+        This is where react shines, it allows you to use composition to reuse code between components. 
+
+    ii. what JSX does.
+
+        - JSX is a preprocessor step that adds XML syntax to Javascript. You can use React without jSX but JSX makes React more elegeant/simple. 
+
+
+    iii. why ReactJS is safe with respect to XSS.
+
+        - React isn't actually chagning or creating DOM objects. they are peices of the virtual Dom that gets added in later. They simply appear to be HTML. 
+        This means we are safe from possible XSS attacks. Converts from strings to HTML DOM objects. 
+
+
+    iv. how the data flows through the components. How are comments loaded? created? saved.
+
+        - Comments are created in the comment form and then posted to the server. The commentbox gets the data from the server and passes it down to the comment list and then to the comment. 
+        It uses props and composition instead of inheritance. The direction is one way because it is react. 
+
+
+    v. the nature and purpose of props and state. Which is immutable and which is mutable and why does this distinction matter?
+
+        - The props are immutable and they are used to read information from parents. Props are external and controlled by whatever renders the component. 
+            States are mutable, they get data and are meant to change often. they are dynamic and meant to change internally with setState()
+
+
+
+Consider the following, more detailed questions based on statements in the tutorial.
+
+
+    i. Try editing the comments.json file (to add or remove a legal comment). What happens and why?
+
+        - The server recognized that it wasn't in the file and it updated to remove the comment. When I changed the comment text, it updated that as well. 
+        This is because the react is constantly checking for updates and data and using its information to update the page. Posting a comment changes the
+        comments.json file. 
+
+
+    ii. When the CommentBox has loaded comments from the server (in loadCommentsFromServer()), why doesn’t it call render() to make them visible?
+
+        - It doesn't render this data because that is reserved for the comment list and comments. It uses states to save the data for future use of those components. 
+
+
+    iii. Of what advantage, if any, is it to require that components always represent the current state of the view?
+
+        - In a web app, if the client is being told that they are seeing all the comments, you want them to see what they're being promised. This requires the data 
+        to be in sync and accurate. Example: Messaging a friend. If you can't see his message right after he sends it, you can't accuratly respond. 
+
+
+    iv. The app implements optimistic updates. Isn’t optimism here more like foolishness? What if the server rejects the new comment (for whatever reason)?
+
+        - It may add it temporarily from a visual standpoint, but immediatly after it would refresh and wipe your addition clean. It would be like you hadn't added anything at all
+        because they are always working to stay in sync. This makes it somewhat less foolish. 
+
+
+
+
+    
