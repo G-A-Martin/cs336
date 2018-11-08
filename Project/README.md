@@ -1,6 +1,6 @@
 Dear Stakeholder,
 
-We would like to present the following startup idea: Pinder. Our team members would consist of: Justin Baksharan, Gavin Martin, and possibly Kevin Tran (still unknown if he wants to join). Our project proposal is to create "Pinder the Web App"
+We would like to present the following startup idea: Pinder. Our team members would consist of: Justin Baksharan, Gavin Martin. Our project proposal is to create "Pinder the Web App"
 
 Our main idea is to take the already existing android app and make it available for all online users without android phones. 
 To do this, we will add a profile page that lets you update (PUT) data for your profile, a matches page with a REACT updating table, 
