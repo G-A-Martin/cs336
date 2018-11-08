@@ -1,0 +1,49 @@
+
+Gavin martin 
+
+10.1.a)
+
+	Compare and contrast MongoDB and the SQL databases you’ve used before. Are there things that one can do that the other can’t?
+	- MongoDB uses JSON to store data while SQL uses relational tables and rows. Mongodb is object oriented when querying. There is no parsing in 
+	Mongodb so you are less perceptible to injection attacks. SQL supports joins, mongo does not. Mongo has better performance and you don't have to define
+	the schema like you would in SQL. Easier to make database in mongo with less planning.
+
+
+10.1.b)
+	You could run MongoDB locally. What advantages and/or disadvantages would that bring with respect to the cloud database you have now?
+		- It would be much cheaper to run Mongo locally. It would save you the memory size limit and just all the data going to and from the server. 
+		The only problem with this is that you would be sacrificing security and complete reliability. If your computer gets hacked, so does your data.
+		If your computer goes down, so does your database. Its much better to store it on the cloud if you can afford to. 
+
+
+
+10.1.c)
+	You’ve built a “sandbox” database on mLab. Could you use this for a production database? Why or why not?
+	- No. On the website it mentions that sandbox members don't have high availability, access to 24x7 emergency support, consistent and
+	predictiable performance of the database, or security beyond standard database authentication. This is a very weak sandbox and its also
+	limited to 500mb. It could be used for production but it would be very inefficent and wouldn't last very long. 
+
+
+
+
+
+
+
+
+10.2.a)
+	For this integration of mLab into your application, was it better to run the modified server (npm start) or the full Webpack development environment (npm run dev)? Why?
+		- I tested both and the non-webpacked version was much more epensive to run than the webpack version. Running a built webpack version only used 825Bytes of data. 
+		I'll be honest, during the webpack lab I had no idea why we were doing what we were doing, but now it makes sense. By bundling up the information, we are saving
+	 	money by not costing the server. 
+
+
+10.2.b)
+	Explain what happens when you modify the database using mLab’s web interface rather than your application? Try adding/updating/deleting comment documents.
+		-  It updated and / or deleted the comment when I changed the mongoDB comment. This is just another way of adding or changing a comment in the system. The 
+		consistent GET request instantly updated it on host 3000.
+
+
+10.2.c)
+	Is this comments application the sort of application that should use an SQL or a noSQL database? Explain your answer.
+	- A relational database is simply what it sounds like. Its meant for relations between tables. This is a simple comment app and 
+	doesn't require Mongo. I believe that this comment app functions much better with Mongo than it would with SQL especially since Mongo is faster. 

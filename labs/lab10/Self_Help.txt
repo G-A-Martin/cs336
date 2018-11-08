@@ -1,0 +1,48 @@
+
+
+
+Create: 
+
+db.collection.insertOne(
+	{
+		name: "sue",
+		age: 26,
+		status: "pending"
+	}
+)
+
+
+
+
+Read: 
+
+db.collection.find(
+	{ age: { $gt: 18 } },
+	{ name: 1, address: 1}
+).limit(5)
+
+db.inventory.find( { qty: { $eq: 20 } } )
+
+
+
+db.comments.find( {author: {$eq: "Pete Hunt"} }
+
+
+
+
+
+
+Update: 
+
+db.collection.updateMany(
+	{ age: { $lt: 18 } },
+	{ $set: { status: "reject" } }
+)
+
+
+
+Delete: 
+
+db.collection.deleteMany(
+	{ status: "reject" }
+)
