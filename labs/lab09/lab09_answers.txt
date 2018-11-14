@@ -1,0 +1,55 @@
+
+
+
+1.a. What good has this bundling done? How big is the new bundle file? Check the Chrome DevTools network log to see what files are being loaded.
+    - The bundling has decreased the file size. The new bundle size is only 1.34 MB and it has 43856 lines of Javascript. I ran this after completing
+    the entire lab but the only files in dev tools were index and bundle.js
+
+
+1.b. What role did Babel play in the bundling?
+    - Babel can turn new forms of javascript into older ones so they're compatible and support more browsers
+
+
+1.c. Can you just load file:///path…/index.html using the browser? Why or why not?
+    - The Comments header and form show up but nothing else does. It doesn't work either to submit comments. This is likely due to the fact
+    that there aren't any GET or POST HTTP method savailable, so you are limited in what you can send/receive. 
+
+    Note: Upon completion of this lab, the html didn't show on dist/index.html. It is because it was moved to app
+
+
+1.d. In webpack.config.js, what does the loader test entry test: /\.jsx?$/ do?
+    - it loads the .babelrc and ignores node_modules in the proccess. 
+    JSX is also used which is comparable to XML which is used to create React elements for the Virtual DOM
+
+
+
+
+
+
+2.a.  Check out the new dist/index.html and dist/bundle.js. How are they different from the previous versions?
+    - the bunder file is bigger. After bundling it its more optomized than the previous version and its in ES2015. 
+
+
+2.b.  What good is it to replace the CDN library loads with module imports?
+    - Its done locally instead and it knows exactly what to import. This speeds it up
+
+
+2.c.  Check the network log. How many of the new modules you built are being loaded? How about the CSS file?
+    - Bundle.js and the css file are loaded to make it faster. 
+
+
+
+3.a  Try out both ports and explain the difference between them.
+3.b  localhost:3001 — Try editing one of the React module files. Explain what happens, both to the displayed SPA webpage and to the bundle/index files.
+    - when you edit the react code it refreshes the page. It updates in real time as the server runs. 
+
+3.c  localhost:3000 — Try loading /api/comments. Explain what you get. Does the SPA page running on this port change 
+(due to the edits made above) as well?
+    - This page doesn't change when the code is changed. 
+
+3.d  For more information on this two-server configuration, see Webpack’s HMR & React-Hot-Loader — The Missing Manual.
+3.e  Is it worth all this trouble to build a development configuration?
+    - If you are going to use a page thats highly interactive and changes then yes, it is good to use React and the webpack. You want it 
+    to be as efficient as possible and to do that, you don't want it to flash or slow down. Before this class I made this mistake at my 
+    Internship and now there's so much going on, Its practically unsable (without this at least)
+
