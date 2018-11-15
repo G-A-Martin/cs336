@@ -1,0 +1,28 @@
+
+Gavin martin 
+
+Compare and contrast your development and production deployments and explain how each is designed.
+ 	- The production code is meant to be optimized for performance. We want the stuff on the browser to be as fast
+	as possible for the user. This means the javascript will be uglier and take up less space. Its also used by the
+	webpack.production.config.js file.
+	- The development deployment is used for developing. We add new features on this branch to test and debug before
+	putting them onto the production branch. 
+
+
+List the optimizations you’ve configured for this production version and, if possible, find evidence of then in the
+deployed application files.
+
+	- Two big things changed are UglifyJS and OptomizeOccuranceOrderPlugin. The uglify compresses the code to take 
+	up less space and perform better. The optimzeOccurenceOrderPlugin makes the bundle file smaller. 
+	
+	
+What advantage is there is deploying an application to a PaaS tool like Heroku?
+	- Working on Heroku lets you keep a live running version of you site up. This lets you run it so that everyone
+	can connect. In addition to this, you can update the feature/development branch whenever you like without messing
+	up your site and then deploy to production when its ready. 
+	
+	
+How does Heroku know how to install and run your application (after pulling it from the specified branch on GitHub)?
+	- It enters the package.json file and uses the install and start script. From these it follows the commands to 
+	install all the modules needed so they don't have to be uploaded. It also runs whatever server file you have 
+	with the start command. 
